@@ -70,5 +70,5 @@ public class IntTree {
     public int size() {
         return size;
     }
-
+    
 }

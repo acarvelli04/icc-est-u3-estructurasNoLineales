@@ -1,7 +1,7 @@
 # Práctica: Estructuras No Lineales - 
 
 ## Autor
-- Nombre: Bryan Barros
+- Nombre: Antonio Carvelli
 - Carrera/Curso: Estructura de Datos
 
 
