@@ -5,7 +5,7 @@
 - Carrera/Curso: Estructura de Datos
 
 
-##  Nombre de la práctica - Fecha
+##  Práctica de Árboles – Implementación Integers- 2026-01-05
 - Práctica:  Práctica de Árboles – Implementación Integers
 - Fecha: [2026-01-05]
 
@@ -22,4 +22,20 @@ Inserta aquí la captura del código o de la ejecución.
 Inserta aquí una segunda captura si aplica.
 - Archivo: ![`assets/captura-2.png`](assets/SizeO(1).png)
 
+##  Práctica de Árboles – Implementación Generico uso de  interfaces - 05/01/2026
 
+## Evidencias
+### Captura 1
+En ambas capturas se muestra el uso de la implementación genérica del árbol binario de búsqueda con diferentes tipos de datos (Strings y Doubles)
+
+En la primera captura se muestra la inserción y recorrido de Strings.
+
+En la segunda captura se muestra la inserción y recorrido de Doubles.
+
+la segunda esta como clase generica
+- Archivo: ![`assets/captura-1.png`](assets/priemraslaida.png)
+- Archivo: ![`assets/captura-1.png`](assets/appjavagenerico.png)
+### Captura 2 
+Inserta aquí una segunda captura si aplica.
+- Archivo: ![`assets/captura-2.png`](assets/verdaderaSegundaSalida.png)
+- Archivo: ![`assets/captura-2.png`](assets/generico.png)
