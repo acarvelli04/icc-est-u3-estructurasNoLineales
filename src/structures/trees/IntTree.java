@@ -1,6 +1,6 @@
-package trees;
+package structures.trees;
 
-import nodes.Node;
+import structures.nodes.Node;
 
 public class IntTree {
     private Node<Integer> root;

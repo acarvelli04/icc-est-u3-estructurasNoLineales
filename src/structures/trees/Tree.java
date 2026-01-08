@@ -1,6 +1,6 @@
-package trees;
+package structures.trees;
 import models.Person;
-import nodes.Node;
+import structures.nodes.Node;
 
 public class Tree<T extends Comparable<T>> {
     

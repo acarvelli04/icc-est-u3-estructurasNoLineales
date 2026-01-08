@@ -1,10 +1,12 @@
 import models.Person;
-import trees.IntTree;
-import trees.Tree;
+import structures.graph.Graph;
+import structures.nodes.Node;
+import structures.trees.IntTree;
+import structures.trees.Tree;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runTree();
+        runGrapg();
     }
 
     private static void runTree(){
@@ -38,6 +40,33 @@ public class App {
         System.out.println("\nIn Order");
         tree.inOrder();
         System.out.println("\nSize: " + tree.size());
+
+    }
+
+    private  static  void runGrapg() {
+        Graph<String> graph = new Graph<>();
+
+        Node<String> nA = new Node<String>("A");
+        Node<String> nB = new Node<String>("B");
+        Node<String> nC = new Node<String>("C");
+        Node<String> nD = new Node<String>("D");
+
+        graph.addNode(nA);
+        graph.addEdge(nA, nB);
+        graph.addEdge(nA, nC);
+        graph.addEdge(nB, nD);
+        graph.addEdge(nC, nD);
+
+        graph.printGraph();
+
+        // Conectados con A
+        
+        Node<String>[] neighbors = graph.getNeighbors(nA);
+        System.out.print("Vecinos de A: ");
+        for(Node<String> neighbor : neighbors){
+            System.out.print(neighbor + " ");
+        }
+        
 
     }
     
