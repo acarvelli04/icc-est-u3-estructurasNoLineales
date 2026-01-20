@@ -6,7 +6,55 @@ import structures.trees.Tree;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runGrapg();
+        runGrapgRecorridos();
+    }
+
+    private  static  void runGrapgRecorridos() {
+        Graph<Person> grafo = new Graph<>();
+
+        Person pC23 = new Person("Carlos", 23);
+        Person pL18 = new Person("Luis", 18);
+        Person pA23 = new Person("Carlos", 23);
+        Person pA30 = new Person("Carlos", 23);
+        Person pJ25 = new Person("Carlos", 23);
+        Person pAn20 = new Person("Ana", 23);
+
+        //conecciones carlos 23
+        grafo.addEdge(new Node<>(pC23), new Node<Person>(pA30));
+        grafo.addConocido(new Node<>(pC23), new Node<Person>(pA30));
+
+        grafo.addEdge(new Node<>(pC23), new Node<Person>(pA23));
+        grafo.addConocido(new Node<>(pC23), new Node<Person>(pA23));
+
+        grafo.addEdge(new Node<>(pC23), new Node<Person>(pL18));
+        grafo.addConocido(new Node<>(pC23), new Node<Person>(pL18));
+
+        //conecciones Luis 18
+
+        grafo.addEdge(new Node<>(pL18), new Node<Person>(pA23));
+        grafo.addConocido(new Node<>(pL18), new Node<Person>(pA23));
+
+        grafo.addEdge(new Node<>(pL18), new Node<Person>(pJ25));
+        grafo.addConocido(new Node<>(pL18), new Node<Person>(pJ25));
+
+        //conocidos Andres 23
+
+        grafo.addEdge(new Node<>(pA23), new Node<Person>(pL18));
+        grafo.addConocido(new Node<>(pA23), new Node<Person>(pL18));
+
+        //conecciones ana 30
+
+        grafo.addEdge(new Node<>(pA30), new Node<Person>(pC23));
+        grafo.addConocido(new Node<>(pA30), new Node<Person>(pC23));
+
+        grafo.addEdge(new Node<>(pA30), new Node<Person>(pAn20));
+        grafo.addConocido(new Node<>(pA30), new Node<Person>(pAn20));
+
+        System.out.println("--------BFS--------");
+        grafo.bfs(new Node<>(pC23));
+        
+        System.out.println("--------DFS--------");
+        grafo.dfs(new Node<>(pC23));
     }
 
     private static void runTree(){

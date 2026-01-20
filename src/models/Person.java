@@ -40,5 +40,9 @@ public class Person implements Comparable<Person> {
         }
         return this.nombre.compareTo(otra.getNombre());
     }
+
+    
+
+    
     
 }

@@ -2,8 +2,14 @@ package structures.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+
 import structures.nodes.Node;
 
 public class Graph<T> {
@@ -29,6 +35,7 @@ public class Graph<T> {
        mapa.putIfAbsent(node, new ArrayList<>());
     }
 
+    //Grafo no dirigido
     public void addEdge(Node<T> n1, Node<T> n2) {
        addNode(n1);
        addNode(n2);
@@ -37,7 +44,19 @@ public class Graph<T> {
        //listadoNodo1.add(n2);
        //lo mismo pero en una sola linea
        mapa.get(n2).add(n1);
+
+       
     }
+
+    public void addConocido (Node<T> n1, Node<T> n2) {
+       addNode(n1);
+       addNode(n2);
+        mapa.get(n1).add(n2);
+        //Del mapa obtengo el lsitado
+       //get(n1) -> listado de N1
+       // add(n2); -> agregar N2 al listado N1
+    }
+
 
     public void printGraph(){
         for(Map.Entry<Node<T> , List<Node<T>>> entry : mapa.entrySet()){
@@ -61,6 +80,48 @@ public class Graph<T> {
         return neighbors.toArray((Node<T>[]) new Node[neighbors.size()]);
     }
     
+    public List<Node<T>> getNeigbors2 (Node<T> n){
+        return mapa.getOrDefault(n, List.of());
+
+    }
+
+    public void bfs(Node<T> start){
+        Set<Node<T>> visitados = new LinkedHashSet<>();
+        Queue<Node<T>> queue = new LinkedList<>();
+        
+        visitados.add(start);
+        queue.add(start);
+
+        while (!queue.isEmpty()) {  //para romper, vaciar cola
+            Node<T> current = queue.poll();
+            System.out.println(current.getValue() + " ");
+
+            for (Node<T> conocido : getNeighbors(current)) {
+                if (!visitados.contains(conocido)) {
+                    visitados.add(conocido);
+                    queue.add(conocido);
+                }
+            }
+        }
+
+    }
+    
+
+    public void dfs(Node<T> start){
+        Set<Node<T>> visitados = new LinkedHashSet<>();
+        dfsRecursive(start,visitados);
+    }
+    private void dfsRecursive(Node<T> current, Set<Node<T>> visitados) {
+        visitados.add(current);
+        System.out.println(current.getValue() + " ");
+
+        for (Node<T> conocido : getNeighbors(current)) {
+            if (!visitados.contains(conocido)) {
+                dfsRecursive(conocido, visitados);
+                    
+            }
+        }
+    }
 
 }
 

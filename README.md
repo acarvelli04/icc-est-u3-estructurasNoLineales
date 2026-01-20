@@ -65,7 +65,7 @@ Inserta aquí una segunda captura si aplica.
 - Fecha: [2026-01-08]
 
 ## Descripción
-Creamos nnodos, junto a su lista de lso que conoce donde los incrimos y luego mostramos
+Creamos nodos, junto a su lista de lso que conoce donde los incrimos y luego mostramos
 
 para luego mostrar a sus vecinos
 
@@ -77,5 +77,26 @@ Inserta aquí la captura del código o de la ejecución.
 
 ### Captura 2 
 aqui ,mostramos los vecinos de A tambien
+- Archivo: !![alt text](<assets/Captura de pantalla 2026-01-08 110150.png>)
+![alt text](<assets/Captura de pantalla 2026-01-08 110205.png>)
+
+
+##  Práctica de Graphs - 2026-01-20
+- Práctica:  Práctica de 
+- Fecha: [2026-01-20]
+
+## Descripción
+Creamos nnodos, junto a su lista de lso que conoce donde los incrimos y luego mostramos
+
+para luego mostrar a sus vecinos
+
+## Evidencias
+### Captura 1
+Inserta aquí la captura del código o de la ejecución.
+- Archivo: ![`assets/captura-1.png`](assets/salidaGrap1.png)
+- Archivo: ![alt text](assets/codigo.png)
+
+### Captura 2 
+la busqueda profunda revisaremos los conocidos del nodo y despues al vvecino de ese hasta llegar a l final
 - Archivo: !![alt text](<assets/Captura de pantalla 2026-01-08 110150.png>)
 ![alt text](<assets/Captura de pantalla 2026-01-08 110205.png>)
