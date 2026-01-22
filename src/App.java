@@ -1,5 +1,8 @@
 import models.Person;
+import structures.graph.BFSPathFinder;
 import structures.graph.Graph;
+import structures.graph.PathFinder;
+import structures.graph.PathResult;
 import structures.nodes.Node;
 import structures.trees.IntTree;
 import structures.trees.Tree;
@@ -10,8 +13,10 @@ public class App {
     }
 
     private  static  void runGrapgRecorridos() {
+        
         Graph<Person> grafo = new Graph<>();
 
+        /** 
         Person pC23 = new Person("Carlos", 23);
         Person pL18 = new Person("Luis", 18);
         Person pA23 = new Person("Carlos", 23);
@@ -55,6 +60,44 @@ public class App {
         
         System.out.println("--------DFS--------");
         grafo.dfs(new Node<>(pC23));
+        */
+
+        Person pC23 = new Person("Carlos", 23);
+        Person pL18 = new Person("Luis", 18);
+        Person pA23 = new Person("Andres", 23);
+        Person pA30 = new Person("Ana", 30);
+        Person pJ25 = new Person("Juan", 25);
+        Person pAn20 = new Person("Ana", 20);
+        Person pM10 = new Person("Mateo", 10);
+        Person pJ10 = new Person("Julio", 10);
+
+        grafo.addEdge(new Node<>(pC23), new Node<>(pA30));
+        grafo.addConocido(new Node<>(pC23), new Node<>(pL18));
+        grafo.addConocido(new Node<>(pC23), new Node<>(pA23));
+        grafo.addConocido(new Node<>(pL18), new Node<>(pJ25));
+        grafo.addEdge(new Node<>(pL18), new Node<>(pA23));
+        grafo.addConocido(new Node<>(pAn20), new Node<>(pA30));
+        grafo.addEdge(new Node<>(pA30), new Node<>(pM10));
+        grafo.addEdge(new Node<>(pM10), new Node<>(pJ10));
+
+        PathFinder<Person> finder = new BFSPathFinder<>();
+        PathResult<Person> resultado = finder.find(grafo,
+            new Node<Person>(pC23), 
+            new Node<Person>(pJ10));
+
+        System.err.println("Orden BFS");
+        resultado.getVisitados()
+            .forEach((node) -> {
+                System.err.println(node.getValue() + " ");
+
+            });
+
+        System.err.println("Ruta encontrada por BFS");
+        resultado.getPath()
+            .forEach((node) -> {
+                System.err.println(node.getValue() + " ");
+
+            });
     }
 
     private static void runTree(){

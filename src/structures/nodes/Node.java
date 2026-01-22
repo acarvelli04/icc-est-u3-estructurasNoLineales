@@ -43,7 +43,7 @@ public class Node<T>{
 
     @Override
     public String toString() {
-        return "N ["+ value +"]";
+        return "N [" + value + "]";
     }
 
     @Override
@@ -51,6 +51,9 @@ public class Node<T>{
         final int prime = 31;
         int result = 1;
         result = prime * result + ((value == null) ? 0 : value.hashCode());
+        result = prime * result + ((left == null) ? 0 : left.hashCode());
+        result = prime * result + ((right == null) ? 0 : right.hashCode());
+        result = prime * result + ((conocidos == null) ? 0 : conocidos.hashCode());
         return result;
     }
 
@@ -58,17 +61,11 @@ public class Node<T>{
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-        if (obj == null)
+        if (obj == null|| getClass() != obj.getClass())
             return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Node other = (Node) obj;
-        if (value == null) {
-            if (other.value != null)
-                return false;
-        } else if (!value.equals(other.value))
-            return false;
-        return true;
+        Node<?> node = (Node<?>) obj;
+        return value.equals(node.value);
+        
     }
 
     
